@@ -26,19 +26,19 @@ export type Repo = {
   name: string;
 };
 
-export interface GithubStateType {
+export type GithubStateType = {
   users: User[];
   user: User | null;
   repos: Repo[];
   loading: boolean;
-}
+};
 
-export interface GithubContextType extends GithubStateType {
+export type GithubContextType = GithubStateType & {
   searchUsers: (text: string) => Promise<void>;
   clearUsers: () => void;
   getUser: (username: string) => Promise<void>;
   getUserRepos: (username: string) => Promise<void>;
-}
+};
 
 export const GithubInitialState: GithubStateType = {
   users: [],
