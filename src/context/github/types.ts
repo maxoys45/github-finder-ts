@@ -4,7 +4,7 @@ export const GET_USER = "GET_USER";
 export const GET_REPOS = "GET_REPOS";
 export const SET_LOADING = "SET_LOADING";
 
-export interface User {
+export type User = {
   login: string;
   id: number;
   avatar_url: string;
@@ -18,13 +18,13 @@ export interface User {
   following: number;
   public_repos: number;
   public_gists: number;
-}
+};
 
-export interface Repo {
+export type Repo = {
   id: number;
   html_url: string;
   name: string;
-}
+};
 
 export interface GithubStateType {
   users: User[];
